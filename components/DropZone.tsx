@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dropzone, FileItem } from "@dropzone-ui/react";
 
 function DropZone() {
@@ -6,6 +6,7 @@ function DropZone() {
   const updateFiles = (incommingFiles: any) => {
     setFiles(incommingFiles);
   };
+
   return (
     <Dropzone
       backgroundColor="#fafafa"
