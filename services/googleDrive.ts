@@ -2,6 +2,7 @@ import { google } from "googleapis";
 import fs from "fs";
 import path from "path";
 import { config } from "../config/config";
+import gapi from "googleapis";
 
 const oauth2Client = new google.auth.OAuth2({
   clientId: config.clientID,
@@ -20,7 +21,7 @@ const filePath = path.join(__dirname, "sample.mp3");
 
 // this is an example to how to upload some file to google drive
 
-async function uploadFile() {
+async function uploadFile(file: any) {
   try {
     const response = await drive.files.create({
       requestBody: {
@@ -30,7 +31,7 @@ async function uploadFile() {
       // actual content of the file
       media: {
         mimeType: "audio/mpeg",
-        body: fs.createReadStream(filePath),
+        body: file,
       },
     });
     console.log(response.data);
