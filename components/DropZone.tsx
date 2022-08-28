@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Dropzone, FileItem } from "@dropzone-ui/react";
 import { uploadFile } from "../services/googleDrive";
-import { getId, getTranscript } from "../services/speechAnalytics";
+import { getData, getId, getTranscript } from "../services/speechAnalytics";
 
 function DropZone() {
   const [files, setFiles] = useState([]);
@@ -14,7 +14,10 @@ function DropZone() {
   // todo : try to test uploading and event getting the transcript for a start
   const handleUpload = (file: any) => {
     // uploadFile(file);
-    getId(file)
+    getId(file);
+    console.log("hello");
+    console.log(file);
+    console.log(getData(file));
   };
 
   return (
