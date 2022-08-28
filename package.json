@@ -9,20 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
+    "@chakra-ui/react": "^2.2.9",
     "@dropzone-ui/react": "^6.7.5",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@prisma/client": "^4.2.1",
     "@types/gapi": "^0.0.42",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node-fetch": "^2.6.2",
     "axios": "^0.27.2",
     "googleapis": "^107.0.0",
+    "framer-motion": "^7.2.1",
     "jsonwebtoken": "^8.5.1",
     "next": "12.2.5",
     "prisma": "^4.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone-uploader": "^2.11.0",
-    "react-google-drive-picker": "^1.2.0"
+    "react-google-drive-picker": "^1.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
