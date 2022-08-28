@@ -4,11 +4,13 @@ import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const router = useRouter();
   // so here is the logic for the login
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,8 +25,8 @@ export default function Login() {
     const loginJSON = await login.json();
     console.log(loginJSON);
     if (loginJSON) {
-      setCookie("token", loginJSON.token, { path: "/" });
-      window.location.href = "/";
+      setCookie("token", loginJSON.token);
+      router.push("/");
     } else {
       alert("error");
     }

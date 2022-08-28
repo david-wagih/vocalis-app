@@ -3,8 +3,12 @@ import React from "react";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
 
 export default function Navbar() {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  console.log(cookies.token);
+
   return (
     <>
       <Flex
@@ -75,30 +79,66 @@ export default function Navbar() {
         </Flex>
         <Flex gap={"34px"}>
           <Link href={"/login"}>
-            <Button
-              bgColor={"rgba(60, 82, 50, 0.19)"}
-              borderRadius={"27px"}
-              w={"126px"}
-              h={"46px"}
-              fontSize={"23px"}
-              fontWeight={"700"}
-              color={"textColor.10"}
+            <div
+              style={{
+                display: cookies.token ? "none" : "block",
+              }}
             >
-              Log-in
-            </Button>
+              <Button
+                bgColor={"rgba(60, 82, 50, 0.19)"}
+                borderRadius={"27px"}
+                w={"126px"}
+                h={"46px"}
+                fontSize={"23px"}
+                fontWeight={"700"}
+                color={"textColor.10"}
+              >
+                Log-in
+              </Button>
+            </div>
           </Link>
+
           <Link href={"/register"}>
-            <Button
-              bgColor={"#283A20"}
-              borderRadius={"27px"}
-              w={"126px"}
-              h={"46px"}
-              fontSize={"23px"}
-              fontWeight={"700"}
-              color={"quaternary"}
+            <div
+              style={{
+                display: cookies.token ? "none" : "block",
+              }}
             >
-              Sign up
-            </Button>
+              <Button
+                bgColor={"#283A20"}
+                borderRadius={"27px"}
+                w={"126px"}
+                h={"46px"}
+                fontSize={"23px"}
+                fontWeight={"700"}
+                color={"quaternary"}
+              >
+                Sign up
+              </Button>
+            </div>
+          </Link>
+
+          <Link href={"/"}>
+            <div
+              style={{
+                display: cookies.token ? "block" : "none",
+              }}
+              onClick={() => {
+                removeCookie("token");
+              }}
+            >
+              <Button
+                bgColor={"rgba(60, 82, 50, 0.19)"}
+                borderRadius={"27px"}
+                w={"126px"}
+                h={"46px"}
+                fontSize={"23px"}
+                fontWeight={"700"}
+                color={"textColor.10"}
+              >
+                Log-out
+              </Button>
+            </div>
           </Link>
         </Flex>
       </Flex>
