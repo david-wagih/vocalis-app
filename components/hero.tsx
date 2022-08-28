@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import heroImage from "../public/Hero-Image.png";
 
 export default function Hero() {
   return (
@@ -50,7 +51,7 @@ export default function Hero() {
           <Image
             alt="hero"
             className="hero-image"
-            src={"/Hero-image.png"}
+            src={heroImage}
             width={"650px"}
             height={"708.58px"}
           />
