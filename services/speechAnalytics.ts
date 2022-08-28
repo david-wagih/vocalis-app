@@ -181,11 +181,7 @@ async function getData() {
     summary: summary,
     talkTime: talkTime,
     silenceTime: silenceTime,
-<<<<<<< Updated upstream
-    talkToSilence: (talkTime / (silenceTime+talkTime)) * 100,
-=======
     talkToSilence: (talkTime / (silenceTime + talkTime)) * 100,
->>>>>>> Stashed changes
     transcript: transcript,
     topics: topics,
   };
