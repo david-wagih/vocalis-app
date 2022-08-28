@@ -1,26 +1,31 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap");
+
+body,
+html {
+  font-family: "Darker Grotesque", sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
 
-* {
-  box-sizing: border-box;
+.login-input {
+  width: 399px;
+  height: 47px;
+  border: 0.704735px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3.52368px;
+  padding-left: 10px;
+  font-family: "Darker Grotesque", sans-serif;
+  background: transparent;
+  color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
+@media only screen and (min-width: 1023px) {
+  .hero-image {
+    display: none;
   }
 }
