@@ -48,12 +48,14 @@ export default function Login() {
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box>
-          <Image
-            alt=""
-            src={"/VocalisLOGO.png"}
-            width={"135px"}
-            height={"125px"}
-          />
+          <Link href="/">
+            <Image
+              alt=""
+              src={"/VocalisLOGO.png"}
+              width={"135px"}
+              height={"125px"}
+            />
+          </Link>
           <Text
             pl={"200px"}
             pt={"40px"}
