@@ -13,7 +13,12 @@ export default function SignUp() {
       >
         <Box>
           <Link href={"/"}>
-            <Image src={"/VocalisLOGO.png"} width={"135px"} height={"125px"} />
+            <Image
+              alt=""
+              src={"/VocalisLOGO.png"}
+              width={"135px"}
+              height={"125px"}
+            />
           </Link>
           <Text
             pl={"200px"}

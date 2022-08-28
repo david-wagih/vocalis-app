@@ -15,7 +15,12 @@ export default function Navbar() {
         <Flex alignItems={"center"} gap={"36px"}>
           <Link href={"/"}>
             <Box>
-              <Image src={"/VocalisLOGO.png"} width={"64px"} height={"64px"} />
+              <Image
+                alt=""
+                src={"/VocalisLOGO.png"}
+                width={"64px"}
+                height={"64px"}
+              />
             </Box>
           </Link>
           <Link href={"#features"}>

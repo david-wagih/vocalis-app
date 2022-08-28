@@ -12,7 +12,12 @@ export default function Login() {
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box>
-          <Image src={"/VocalisLOGO.png"} width={"135px"} height={"125px"} />
+          <Image
+            alt=""
+            src={"/VocalisLOGO.png"}
+            width={"135px"}
+            height={"125px"}
+          />
           <Text
             pl={"200px"}
             pt={"40px"}
@@ -21,7 +26,7 @@ export default function Login() {
             color={"textColor.10"}
             w={"700px"}
           >
-            Welcome back! Let's get better together
+            Welcome back! Let us get better together
           </Text>
         </Box>
         <Flex pr={"200px"} flexDirection={"column"} alignItems={"center"}>
@@ -64,7 +69,7 @@ export default function Login() {
               Log in
             </Button>
             <Text fontWeight={"600"} fontSize={"18px"} color={"textColor.10"}>
-              Don't have an account?
+              no account?
               <chakra.span
                 transition={"all 0.2s ease-in-out"}
                 pl={"10px"}
