@@ -3,6 +3,7 @@
 body,
 html {
   font-family: "Darker Grotesque", sans-serif;
+  scroll-behavior: smooth;
 }
 
 form {
@@ -28,4 +29,52 @@ form {
   .hero-image {
     display: none;
   }
+}
+
+.card-wrapper {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: repeat(2, 370px);
+  grid-template-rows: repeat(2, 376px);
+  grid-column-gap: 80px;
+  grid-row-gap: 75px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #829878;
+  width: 370px;
+  height: 376px;
+  border-radius: 20px;
+}
+
+.gradient-bar {
+  background: linear-gradient(to right, #a4b99a, #558441);
+}
+
+.team-card {
+  background-color: #829878;
+  width: 370px;
+  height: 476px;
+  border-radius: 20px;
+}
+
+.team-img {
+  border-radius: 100%;
+}
+
+.team-wrapper {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: repeat(2, 370px);
+  grid-template-rows: repeat(2, 376px);
+  grid-column-gap: 10px;
+  grid-row-gap: 1px;
+  justify-content: center;
+}
+
+#description {
+  padding-top: 10px;
 }

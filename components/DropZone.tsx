@@ -8,7 +8,7 @@ function DropZone() {
   };
   return (
     <Dropzone
-      backgroundColor="#fafafa"
+      backgroundColor="transparent"
       label="Upload"
       onChange={updateFiles}
       value={files}
