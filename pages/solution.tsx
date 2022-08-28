@@ -22,6 +22,7 @@ export default function Solution(props) {
   const handleUpload = async (file: any) => {
     const ourAnalytics: Analytics = await getData();
     setAnalytics(ourAnalytics);
+    console.log(ourAnalytics);
   };
   return (
     <div className={styles.container}>
