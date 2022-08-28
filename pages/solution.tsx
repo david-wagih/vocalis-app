@@ -1,5 +1,4 @@
 import Head from "next/head";
-import DropZone from "../components/DropZone";
 import styles from "../styles/Home.module.css";
 // @ts-ignore
 import { Box, Text, Flex } from "@chakra-ui/react";
@@ -19,7 +18,7 @@ export default function Solution(props) {
   // todo : this is the state that needs to be shown to the user in the UI
   const [analytics, setAnalytics] = useState<Analytics>();
 
-  const handleUpload = async (file: any) => {
+  const handleUpload = async () => {
     const ourAnalytics: Analytics = await getData();
     setAnalytics(ourAnalytics);
     console.log(ourAnalytics);
