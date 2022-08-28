@@ -7,7 +7,9 @@ import styles from "../styles/Home.module.css";
 import react from "React";
 import { Box, Text, Flex } from "@chakra-ui/react";
 
-export default function solution() {
+
+// @ts-ignore
+export default function solution(props) {
   return (
     <div className={styles.container}>
       <Head>

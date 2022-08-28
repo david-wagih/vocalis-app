@@ -1,7 +1,7 @@
 import { user } from "../@types/user";
 import prisma from "../lib/prisma";
 import jwt from "jsonwebtoken";
-import { config } from "../config";
+import { config } from "../config/config";
 
 // this function should handle new users registeration
 const register = async (u: user) => {

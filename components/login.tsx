@@ -1,9 +1,36 @@
 import React from "react";
+// @ts-ignore
 import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
+import { useRouter } from "next/router";
 
 export default function Login() {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const router = useRouter();
+  // so here is the logic for the login
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const login = await fetch("http://localhost:3000/api/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    console.log(login);
+    const loginJSON = await login.json();
+    console.log(loginJSON);
+    if (loginJSON) {
+      setCookie("token", loginJSON.token);
+      router.push("/");
+    } else {
+      alert("error");
+    }
+  };
   return (
     <>
       <Flex
@@ -12,7 +39,12 @@ export default function Login() {
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box>
-          <Image src={"/VocalisLOGO.png"} width={"135px"} height={"125px"} />
+          <Image
+            alt=""
+            src={"/VocalisLOGO.png"}
+            width={"135px"}
+            height={"125px"}
+          />
           <Text
             pl={"200px"}
             pt={"40px"}
@@ -21,7 +53,7 @@ export default function Login() {
             color={"textColor.10"}
             w={"700px"}
           >
-            Welcome back! Let's get better together
+            Welcome back! Let us get better together
           </Text>
         </Box>
         <Flex pr={"200px"} flexDirection={"column"} alignItems={"center"}>
@@ -34,7 +66,7 @@ export default function Login() {
             w={"300px"}
             pb={"20px"}
           ></Box>
-          <form action="submit">
+          <form action="submit" onSubmit={handleLogin}>
             <Text
               mt={"40px"}
               fontWeight={"700"}
@@ -48,9 +80,18 @@ export default function Login() {
               className="login-input"
               type="text"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <input className="login-input" type="text" placeholder="Password" />
+            <input
+              className="login-input"
+              type="text"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <Button
+              type="submit"
               variant={"unstyled"}
               _hover={{ bg: "primary.100", color: "white" }}
               w={"398px"}
@@ -64,7 +105,7 @@ export default function Login() {
               Log in
             </Button>
             <Text fontWeight={"600"} fontSize={"18px"} color={"textColor.10"}>
-              Don't have an account?
+              no account?
               <chakra.span
                 transition={"all 0.2s ease-in-out"}
                 pl={"10px"}

@@ -26,7 +26,7 @@ export default function Hero() {
             h={"100px"}
           >
             Start analyzing your school presentation, business meeting, or
-            regular conversation. Let's become a better public speaker
+            regular conversation. Let us become a better public speaker
           </Text>
           <Link href={"/solution"}>
             <Button
@@ -48,6 +48,7 @@ export default function Hero() {
         </Flex>
         <Box pt={"0px"} pl={"400px"} display={{ base: "none", lg: "block" }}>
           <Image
+            alt="hero"
             className="hero-image"
             src={"/Hero-image.png"}
             width={"650px"}

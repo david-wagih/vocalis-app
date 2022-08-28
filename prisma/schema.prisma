@@ -19,14 +19,14 @@ model user {
 model speech {
   id          Int    @id @default(autoincrement())
   file       String
-  timeTaken   DateTime @db.Time(6) 
-  wordsPerMinute Int
-  Volume      Float
-  NoOfFillerWords Int
-  OverAllTone  String
-  GrammerMistakes Int
-  Summary     String
-  Transcript String
+  timeTaken   DateTime? @db.Time(6) 
+  wordsPerMinute Int?
+  Volume      Float?
+  NoOfFillerWords Int?
+  OverAllTone  String?
+  GrammerMistakes Int?
+  Summary     String?
+  Transcript String?
   userId      Int
   user        user   @relation(fields: [userId], references: [id])
 }
