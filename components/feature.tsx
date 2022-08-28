@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { Flex, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -46,9 +47,14 @@ export default function Feature() {
       <Box className="card-wrapper">
         {features.map((feature) => {
           return (
-            <Box className="card">
+            <Box key={feature.title} className="card">
               <Flex justifyContent={"center"} pt={"44px"} pb={"22px"}>
-                <Image src={feature.image} width={"162px"} height={"143px"} />
+                <Image
+                  alt=""
+                  src={feature.image}
+                  width={"162px"}
+                  height={"143px"}
+                />
               </Flex>
               <Box pl={"33px"}>
                 <Text fontWeight={"700"} fontSize={"32px"} fontStyle={"normal"}>

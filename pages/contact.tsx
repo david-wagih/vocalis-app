@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../components/header";
+// @ts-ignore
 import { Flex, Box, Text, Button, chakra, Image, Link } from "@chakra-ui/react";
 
-export default function contact() {
+// @ts-ignore
+export default function contact(props) {
   return (
     <>
       <Navbar />
@@ -12,7 +14,12 @@ export default function contact() {
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box>
-          <Image src={"/VocalisLOGO.png"} width={"135px"} height={"125px"} />
+          <Image
+            alt="Contact"
+            src={"/VocalisLOGO.png"}
+            width={"135px"}
+            height={"125px"}
+          />
           <Text
             pl={"200px"}
             pt={"40px"}

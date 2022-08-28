@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { Flex, Box, Text, Button, chakra, Image, Link } from "@chakra-ui/react";
 import Navbar from "../components/header";
 
@@ -35,8 +36,8 @@ const people: Person[] = [
     link: "https://github.com/rayido",
   },
 ];
-
-export default function team() {
+// @ts-ignore
+export default function team(props) {
   return (
     <>
       <Navbar />
@@ -56,9 +57,10 @@ export default function team() {
       <Box className="card-wrapper">
         {people.map((member) => {
           return (
-            <Box className="card">
+            <Box key={member.name} className="card">
               <Flex justifyContent={"center"} pt={"44px"} pb={"22px"}>
                 <Image
+                  alt={member.name}
                   className="team-img"
                   src={member.image}
                   width={"162px"}

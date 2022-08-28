@@ -1,12 +1,8 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { useState } from "react";
 import DropZone from "../components/DropZone";
 import styles from "../styles/Home.module.css";
-import react from "React";
+// @ts-ignore
 import { Box, Text, Flex } from "@chakra-ui/react";
-
 
 // @ts-ignore
 export default function solution(props) {
