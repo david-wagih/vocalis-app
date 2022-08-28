@@ -3,10 +3,7 @@ import DropZone from "../components/DropZone";
 import styles from "../styles/Home.module.css";
 // @ts-ignore
 import { Box, Text, Flex } from "@chakra-ui/react";
-<<<<<<< Updated upstream
-=======
 import Navbar from "../components/header";
->>>>>>> Stashed changes
 
 // @ts-ignore
 export default function solution(props) {
