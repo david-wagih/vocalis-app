@@ -47,6 +47,7 @@ form {
   width: 370px;
   height: 376px;
   border-radius: 20px;
+  -o-animation: alternate;
 }
 
 .gradient-bar {
