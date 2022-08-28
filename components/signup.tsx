@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 // @ts-ignore
 import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { user } from "../@types/user";
+import { useRouter } from "next/router";
 
 export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const router = useRouter();
+  // todo : so i will send this one to the register service
+  const newUser: user = {
+    name: name,
+    email: email,
+    password: password,
+  };
+
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newUserCreated = await fetch(
+      "http://localhost:3000/api/user/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      }
+    );
+    const newUserCreatedJSON = await newUserCreated.json();
+    if (newUserCreatedJSON) {
+      router.push("/login");
+    } else {
+      alert("error");
+    }
+  };
+
   return (
     <>
       <Flex
@@ -43,7 +76,7 @@ export default function SignUp() {
             w={"300px"}
             pb={"20px"}
           ></Box>
-          <form action="submit">
+          <form action="submit" onSubmit={handleRegister}>
             <Text
               mt={"40px"}
               fontWeight={"700"}
@@ -57,21 +90,22 @@ export default function SignUp() {
               className="login-input"
               type="text"
               placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <input
               className="login-input"
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               className="login-input"
               type="password"
               placeholder="Password"
-            />
-            <input
-              className="login-input"
-              type="password"
-              placeholder="Confirm Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button
               type="submit"
