@@ -36,9 +36,10 @@ function DropZone() {
   // };
 
   return (
+
     <div>
       <Dropzone
-        backgroundColor="#fafafa"
+        backgroundColor="transparent"
         label="Upload"
         onChange={updateFiles}
         value={files}
@@ -54,6 +55,7 @@ function DropZone() {
       </Dropzone>
       <button onClick={() => handleUpload(files[0])}>upload</button>
     </div>
+
   );
 }
 
