@@ -1,7 +1,7 @@
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 import fs from 'fs';
 
-export async function process(filePath,accessToken)
+export async function process(filePath:string,accessToken:string)
 {
 const fetchResponse = await fetch(`https://api.symbl.ai/v1/process/audio?`, {
   method: 'post',
