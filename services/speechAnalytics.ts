@@ -261,7 +261,8 @@ async function getData()
   let wpm = await getWPM()
   let talkTime = await getTalkTime()
   let silenceTime = await getSilenceTime()
-  let data= {"wpm":wpm,"talkTime":talkTime,"silenceTime":silenceTime,"talkToSilence":(talkTime/silenceTime)*100, "transcript":transcript,"topics":topics}
+  let summary = await getSummary()
+  let data= {"wpm":wpm,"fillerWords":fillerWords,"summary":summary,"talkTime":talkTime,"silenceTime":silenceTime,"talkToSilence":(talkTime/silenceTime)*100, "transcript":transcript,"topics":topics}
   // console.log("TYPE OF",typeof data)
   // console.log("DATA",data)
   return data
