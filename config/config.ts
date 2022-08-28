@@ -4,4 +4,6 @@ export const config = {
   clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
   redirectURL: String(process.env.GOOGLE_REDIRECT_URL),
   refreshToken: String(process.env.GOOGLE_REFRESH_TOKEN),
+  apiKey: String(process.env.GOOGLE_API_KEY),
+  accessToken: String(process.env.GOOGLE_ACCESS_TOKEN),
 };
