@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";

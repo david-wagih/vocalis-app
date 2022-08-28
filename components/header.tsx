@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,28 +74,32 @@ export default function Navbar() {
           </Link>
         </Flex>
         <Flex gap={"34px"}>
-          <Button
-            bgColor={"rgba(60, 82, 50, 0.19)"}
-            borderRadius={"27px"}
-            w={"126px"}
-            h={"46px"}
-            fontSize={"23px"}
-            fontWeight={"700"}
-            color={"textColor.10"}
-          >
-            Log-in
-          </Button>
-          <Button
-            bgColor={"#283A20"}
-            borderRadius={"27px"}
-            w={"126px"}
-            h={"46px"}
-            fontSize={"23px"}
-            fontWeight={"700"}
-            color={"quaternary"}
-          >
-            Sign up
-          </Button>
+          <Link href={"/login"}>
+            <Button
+              bgColor={"rgba(60, 82, 50, 0.19)"}
+              borderRadius={"27px"}
+              w={"126px"}
+              h={"46px"}
+              fontSize={"23px"}
+              fontWeight={"700"}
+              color={"textColor.10"}
+            >
+              Log-in
+            </Button>
+          </Link>
+          <Link href={"/register"}>
+            <Button
+              bgColor={"#283A20"}
+              borderRadius={"27px"}
+              w={"126px"}
+              h={"46px"}
+              fontSize={"23px"}
+              fontWeight={"700"}
+              color={"quaternary"}
+            >
+              Sign up
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </>
