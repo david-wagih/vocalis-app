@@ -7,4 +7,5 @@ export const config = {
   apiKey: String(process.env.GOOGLE_API_KEY),
   accessToken: String(process.env.GOOGLE_ACCESS_TOKEN),
   groupUploadFolderId: "1JxoIgqJGxJ194v5J7xMJkSpJ9RhKtqAf",
+  host: String(process.env.NEXT_PUBLIC_HOST),
 };

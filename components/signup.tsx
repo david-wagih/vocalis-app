@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { user } from "../@types/user";
 import { useRouter } from "next/router";
+import { config } from "../config/config";
 
 export default function SignUp() {
   const toast = useToast();
@@ -21,16 +22,13 @@ export default function SignUp() {
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newUserCreated = await fetch(
-      "http://localhost:3000/api/user/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      }
-    );
+    const newUserCreated = await fetch(`${config.host}/api/user/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
     const newUserCreatedJSON = await newUserCreated.json();
     if (newUserCreatedJSON) {
       router.push("/login");

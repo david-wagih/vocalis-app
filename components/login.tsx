@@ -13,9 +13,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
+import { config } from "../config/config";
 
 export default function Login() {
   const toast = useToast();
+
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -23,7 +25,7 @@ export default function Login() {
   // so here is the logic for the login
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const login = await fetch("http://localhost:3000/api/user/login", {
+    const login = await fetch(`${config.host}/api/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
