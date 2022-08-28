@@ -181,7 +181,7 @@ async function getData() {
     summary: summary,
     talkTime: talkTime,
     silenceTime: silenceTime,
-    talkToSilence: (talkTime / silenceTime) * 100,
+    talkToSilence: (talkTime / (silenceTime+talkTime)) * 100,
     transcript: transcript,
     topics: topics,
   };
