@@ -21,10 +21,12 @@ async function connect() {
         //Get the current MetaMask selected/active wallet
         const walletAddress = account.givenProvider.selectedAddress;   
         console.log(`Wallet: ${walletAddress}`);
+        console.log("wallet connected");
     } else {
     console.log("No wallet");
     
     }
+ 
 }
 </script>
 <input type="button" value="Connect Wallet" onclick="connect();">
