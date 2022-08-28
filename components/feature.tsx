@@ -50,11 +50,8 @@ export default function Feature() {
             <Box key={feature.title} className="card">
               <Flex justifyContent={"center"} pt={"44px"} pb={"22px"}>
                 <Image
-<<<<<<< Updated upstream
                   alt=""
-=======
                   key={feature.title}
->>>>>>> Stashed changes
                   src={feature.image}
                   width={"162px"}
                   height={"143px"}
