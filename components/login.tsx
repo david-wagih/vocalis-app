@@ -1,12 +1,21 @@
 import React from "react";
 // @ts-ignore
-import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Button,
+  chakra,
+  useToast,
+  Toast,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
 
 export default function Login() {
+  const toast = useToast();
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -85,7 +94,7 @@ export default function Login() {
             />
             <input
               className="login-input"
-              type="text"
+              type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -101,6 +110,15 @@ export default function Login() {
               fontSize={"18px"}
               fontWeight={"800"}
               transition={"all 0.2s ease-in-out"}
+              onClick={() =>
+                toast({
+                  title: "Success!",
+                  description: "You have successfully logged in",
+                  status: "success",
+                  duration: 4000,
+                  isClosable: true,
+                })
+              }
             >
               Log in
             </Button>

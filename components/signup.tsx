@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 // @ts-ignore
-import { Box, Flex, Text, Button, chakra } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, chakra, useToast } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { user } from "../@types/user";
 import { useRouter } from "next/router";
 
 export default function SignUp() {
+  const toast = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -118,6 +119,15 @@ export default function SignUp() {
               fontSize={"18px"}
               fontWeight={"800"}
               transition={"all 0.2s ease-in-out"}
+              onClick={() =>
+                toast({
+                  title: "Success!",
+                  description: "You have successfully craeted an account",
+                  status: "success",
+                  duration: 4000,
+                  isClosable: true,
+                })
+              }
             >
               Sign up
             </Button>
