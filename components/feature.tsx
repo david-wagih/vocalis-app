@@ -50,14 +50,23 @@ export default function Feature() {
             <Box key={feature.title} className="card">
               <Flex justifyContent={"center"} pt={"44px"} pb={"22px"}>
                 <Image
+<<<<<<< Updated upstream
                   alt=""
+=======
+                  key={feature.title}
+>>>>>>> Stashed changes
                   src={feature.image}
                   width={"162px"}
                   height={"143px"}
                 />
               </Flex>
               <Box pl={"33px"}>
-                <Text fontWeight={"700"} fontSize={"32px"} fontStyle={"normal"}>
+                <Text
+                  fontWeight={"700"}
+                  fontSize={"32px"}
+                  fontStyle={"normal"}
+                  key={feature.title}
+                >
                   {feature.title}
                 </Text>
                 <Text
@@ -65,6 +74,7 @@ export default function Feature() {
                   fontSize={"16px"}
                   fontStyle={"normal"}
                   w={"261px"}
+                  key={feature.title}
                 >
                   {feature.description}
                 </Text>
