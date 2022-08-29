@@ -52,3 +52,8 @@ Here're some of the project's best features:
 
 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/205/344/datas/gallery.jpg" alt="project-screenshot" width="650" height="400/">
 
+<h2>Future plan</h2>
+
+* Using wallet to log in 
+* Will upload files to ipfs and store 
+* Analtys results will store as NFT become the proof of using.
