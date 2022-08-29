@@ -56,4 +56,4 @@ Here're some of the project's best features:
 
 * Using wallet to log in 
 * Will upload files to ipfs and store 
-* Analtys results will store as NFT become the proof of using.
+* Analtys results will be NFT as the proof of using our platform
